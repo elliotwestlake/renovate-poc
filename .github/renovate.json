@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "additionalBranchPrefix": "{{parentDir}}-"
+  "additionalBranchPrefix": "{{parentDir}}-",
+  "prTitle": "{{parentDir}}: {{depName}} - update to {{newVersion}}"
 }
