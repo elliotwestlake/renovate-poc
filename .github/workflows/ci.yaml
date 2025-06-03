@@ -23,14 +23,19 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install playwright
-        run: yarn playwright install
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright browsers (if not cached)
+        run: npx playwright install --with-deps
 
       - name: Build all packages
         run: yarn build
-
-      - name: Start all packages
-        run: yarn start &
 
       - name: Test all packages
         run: yarn test:e2e
