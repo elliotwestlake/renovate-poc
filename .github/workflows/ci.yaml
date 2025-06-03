@@ -34,8 +34,5 @@ jobs:
       - name: Install Playwright browsers (if not cached)
         run: yarn playwright install
 
-      - name: Build all packages
-        run: yarn build
-
       - name: Test all packages
         run: yarn test:e2e

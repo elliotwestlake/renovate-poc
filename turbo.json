@@ -22,7 +22,8 @@
     },
     "test:e2e": {
       "dependsOn": ["build"],
-      "outputs": []
+      "outputs": [],
+      "passThroughEnv": ["PLAYWRIGHT_*"]
     }
   }
 }
