@@ -10,7 +10,7 @@
       "outputs": []
     },
     "start": {
-      "outputs": [],
+      "outputs": ["build"],
       "persistent": true,
       "cache": false
     },
@@ -21,7 +21,7 @@
       "cache": false
     },
     "test:e2e": {
-      "dependsOn": [],
+      "dependsOn": ["build"],
       "outputs": []
     }
   }

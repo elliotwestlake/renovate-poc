@@ -7,6 +7,13 @@ export default defineConfig({
   timeout: 30000,
   use: {
     headless: true,
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:4173',
+  },
+  webServer: {
+    command: 'yarn start',
+    url: 'http://localhost:4173',
+    reuseExistingServer: !process.env.CI,
+    stdout: 'ignore',
+    stderr: 'pipe',
   },
 });

@@ -9,4 +9,11 @@ export default defineConfig({
     headless: true,
     baseURL: 'http://localhost:3000',
   },
+  webServer: {
+    command: 'yarn start',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
+    stdout: 'ignore',
+    stderr: 'pipe',
+  },
 });
