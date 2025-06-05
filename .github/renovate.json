@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:allNonMajor"],
+  "extends": ["config:recommended"],
+  "dependencyDashboard": false,
+  "prCreation": "immediate",
+  "prConcurrentLimit": 10,
+  "rangeStrategy": "bump",
   "additionalBranchPrefix": "{{parentDir}}-",
   "semanticCommitScope": "{{parentDir}}",
   "packageRules": [
@@ -14,6 +18,11 @@
       ],
       "semanticCommitScope": "",
       "additionalBranchPrefix": ""
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "non-major updates",
+      "automerge": false
     }
   ]
 }
