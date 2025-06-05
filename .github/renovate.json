@@ -5,9 +5,6 @@
   "prCreation": "immediate",
   "prConcurrentLimit": 10,
   "rangeStrategy": "bump",
-  "dryRun": false,
-  "requireConfig": "optional",
-  "onboarding": false,
   "additionalBranchPrefix": "{{parentDir}}-",
   "semanticCommitScope": "{{parentDir}}",
   "packageRules": [
