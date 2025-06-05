@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:nonMajor"],
+  "extends": ["config:base", "group:allNonMajor"],
   "dependencyDashboard": true,
   "additionalBranchPrefix": "{{parentDir}}-",
   "semanticCommitScope": "{{parentDir}}",
