@@ -8,12 +8,7 @@ on:
 jobs:
   renovate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      repository-projects: write
-      metadata: read
+    permissions: write-all
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -25,6 +20,3 @@ jobs:
           configurationFile: .github/renovate.json
         env:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
-          RENOVATE_GIT_AUTHOR: "renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>"
-          RENOVATE_PLATFORM: "github"
-          RENOVATE_AUTODISCOVER: "false"
