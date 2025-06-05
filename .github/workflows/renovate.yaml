@@ -4,10 +4,13 @@ on:
   workflow_dispatch: # Allows manual trigger
   schedule:
     - cron: "0 3 * * *" # Runs daily at 3:00 AM UTC
+  issues:
+    types: [edited] # Triggers when issue is edited (including checkbox changes)
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
+    if: github.event_name != 'issues' || github.event.issue.number == 21
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
