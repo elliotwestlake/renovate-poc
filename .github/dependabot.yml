@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/apps/work"
     schedule:
       interval: "cron"
       cronjob: "0 8 * * 1-5"
@@ -10,13 +10,69 @@ updates:
     allow:
       - dependency-type: "all"
     groups:
-      react:
+      work-react:
         patterns:
           - "react"
           - "react-dom"
           - "@types/react"
           - "@types/react-dom"
-      all-non-major:
+      work-all-non-major:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "npm"
+    directory: "/apps/customer"
+    schedule:
+      interval: "cron"
+      cronjob: "0 8 * * 1-5"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "all"
+    groups:
+      customer-react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      customer-all-non-major:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "npm"
+    directory: "/apps/explore"
+    schedule:
+      interval: "cron"
+      cronjob: "0 8 * * 1-5"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "all"
+    groups:
+      explore-react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      explore-all-non-major:
         patterns:
           - "*"
         exclude-patterns:
