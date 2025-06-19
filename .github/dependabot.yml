@@ -1,9 +1,11 @@
 version: 2
 updates:
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
+      interval: "cron"
       cron: "0 8 * * 1-5"
+      timezone: "UTC"
     open-pull-requests-limit: 10
     allow:
       - dependency-type: "all"
@@ -29,4 +31,6 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      cron: "0 8 * * 1-5" 
+      interval: "cron"
+      cron: "0 8 * * 1-5"
+      timezone: "UTC"
